@@ -11,6 +11,9 @@ module.exports = {
         logo: ['"Pacifico"', 'cursive'],
         body: ['Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        hero: "url('/images/hero-pizza.jpg')",
+      },
     },
   },
   plugins: [],
