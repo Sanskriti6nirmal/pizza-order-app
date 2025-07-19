@@ -4,11 +4,13 @@ import Username from '../features/user/Username';
 
 function Header() {
   return (
-    <header className="flex items-center justify-between border-b border-stone-200 bg-yellow-400 px-4 py-3 uppercase sm:px-6">
-      <Link to="/" className="text-lg font-bold tracking-widest text-stone-800">
-        Mom’s Homemade Pizza 🍕
+    <header className="bg-brandYellow flex items-center justify-between border-b border-stone-300 px-6 py-4 uppercase">
+      <Link
+        to="/"
+        className="font-logo text-brandBrown text-2xl tracking-widest"
+      >
+        Mom’s Homemade Pizza
       </Link>
-
       <SearchOrder />
       <Username />
     </header>

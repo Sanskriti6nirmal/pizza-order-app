@@ -7,18 +7,16 @@ function Home() {
 
   return (
     <div className="my-10 px-4 text-center sm:my-16">
-      <h1 className="mb-8 text-xl font-semibold md:text-3xl">
-        Delicious homemade pizza,
+      <h1 className="font-logo text-brandBrown mb-8 text-2xl md:text-4xl">
+        Delicious pizza,
         <br />
-        <span className="text-yellow-500">
-          made with mom’s love, delivered fresh to you! 🍕❤️
-        </span>
+        <span className="text-brandYellow">Made with love for you.</span>
       </h1>
 
       {username === '' ? (
         <CreateUser />
       ) : (
-        <Button to="/menu" type="primary">
+        <Button to="/menu" type="primary" className="btn-primary">
           Continue ordering, {username}
         </Button>
       )}

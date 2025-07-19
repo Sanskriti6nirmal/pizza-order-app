@@ -1,18 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    fontFamily: {
-      sans: 'Roboto Mono, monospace',
-    },
-
     extend: {
-      fontSize: {
-        huge: ['80rem', { lineHeight: '1' }],
+      colors: {
+        brandYellow: '#facc15',
+        brandBrown: '#78350f',
       },
-      height: {
-        screen: '100dvh',
+      fontFamily: {
+        logo: ['"Pacifico"', 'cursive'],
+        body: ['Inter', 'sans-serif'],
       },
     },
   },
