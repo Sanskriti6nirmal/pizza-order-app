@@ -1,23 +1,18 @@
-import { formatCurrency } from '../../utils/helpers';
-
 function OrderItem({ item, isLoadingIngredients, ingredients }) {
-  const { quantity, name, totalPrice } = item;
-
   return (
-    <li className="space-y-1 py-3">
-      <div className="flex items-center justify-between gap-4 text-sm">
-        <p>
-          <span className="font-bold">{quantity}×</span> {name}
-        </p>
-        <p className="font-bold">{formatCurrency(totalPrice)}</p>
+    <li className="mb-3 rounded-md bg-stone-50 px-4 py-3 shadow-sm">
+      <div className="flex items-start justify-between">
+        <div>
+          <p className="font-semibold">{item.name}</p>
+          <p className="text-xs text-stone-500">Quantity: {item.quantity}</p>
+          {!isLoadingIngredients && ingredients.length > 0 && (
+            <p className="text-xs text-stone-500">
+              Ingredients: {ingredients.join(', ')}
+            </p>
+          )}
+        </div>
+        <p className="font-bold">₹{item.totalPrice}</p>
       </div>
-      <p className="text-sm capitalize italic text-stone-500">
-        {isLoadingIngredients
-          ? 'Fetching ingredients...'
-          : ingredients.length
-          ? ingredients.join(', ')
-          : 'Ingredients info not available'}
-      </p>
     </li>
   );
 }
