@@ -1,6 +1,5 @@
 // Test ID: IIDSAT
 import { useFetcher, useLoaderData } from 'react-router-dom';
-
 import OrderItem from './OrderItem';
 
 import { getOrder } from '../../services/apiRestaurant';
@@ -36,7 +35,7 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="space-y-8 px-4 py-6">
+    <div className="mx-auto max-w-lg space-y-8 rounded-lg bg-white p-6 shadow-md">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold">Order #{id} Status</h2>
 
@@ -52,10 +51,10 @@ function Order() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 px-6 py-5">
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-md bg-stone-200 px-6 py-5">
         <p className="font-medium">
           {deliveryIn >= 0
-            ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
+            ? `Only ${deliveryIn} minutes left 😃`
             : 'Your order should have arrived'}
         </p>
         <p className="text-xs text-stone-500">
@@ -77,7 +76,7 @@ function Order() {
         ))}
       </ul>
 
-      <div className="space-y-2 bg-stone-200 px-6 py-5">
+      <div className="space-y-2 rounded-md bg-stone-200 px-6 py-5">
         <p className="text-sm font-medium text-stone-600">
           Pizza total: {formatCurrency(orderPrice)}
         </p>
